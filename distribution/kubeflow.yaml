@@ -7,12 +7,13 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jdewsnip/argoflow.git
-    targetRevision: 123456789012/my-cluster.my-domain.com
-    path: ./distribution
+    targetRevision: HEAD
+    path: distribution
     kustomize:
       version: v4.0.5
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
+    namespace: dev  
   syncPolicy:
     automated:
       prune: true
